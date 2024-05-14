@@ -1,0 +1,74 @@
+
+------------------------------------------------------
+
+1.Scrivi una funzione che prenda in input una listadi numeri e restituisca una nuova listacontenente solo i numeri pari.
+
+def numeri_pari(lista): #lista dal main
+    return [numero for numero in lista if numero % 2 == 0]
+
+#lista di numeri
+numeri = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+#variabile numeri pari
+numeri_pari = numeri_pari(numeri)
+
+#stampa funzione
+print(numeri_pari)
+
+------------------------------------------------------
+2.Scrivi una funzione che prenda in input una lista di numeri e restituisca la media aritmetica di tutti gli elementi nella lista.
+
+def numeri_media(listadef):
+    somma = 0
+    n = len(listadef)
+    for numero in listadef:
+        somma = somma + numero
+    media = somma/n
+    return media
+    
+listamain = [1,2,3,4,5,6]
+medianumeri = numeri_media(listamain)
+print(medianumeri)
+
+------------------------------------------------------
+4.Scrivi una funzione che dati due liste ritorni truese i due vettori sono uguali, false altrimenti. Due vettori sono uguali se tutte le coppie di elementi allo stesso indice sono uguali
+
+import numpy as np
+
+
+lista1main = [1,2,3,4]
+lista2main = [1,2,3,4]
+
+print(np.array_equal(lista1main, lista2main))
+
+------------------------------------------------------
+
+6.Scrivi un programma che data una lista ed un elemento da cercare, ritorni l'indice della prima occorrenza dell'elemento nella lista.
+
+lista1main = [1,11,3,4,5,6,7,8,9,10]
+n = int(input("inserisci il valore del numero da trovare : "))
+
+for i in lista1main:
+    if i == n:
+        print("numero trovato di valore : ", i )
+
+------------------------------------------------------
+7.Dato un vettore di N elementi, trova l'indice e il valore corrispondete alle celle contenenti il massimo e minimo.
+
+def trovamassimoeminimo(vettore):
+    if not vettore:
+        return None, None, None, None
+    indice_massimo = vettore.index(max(vettore))
+    indice_minimo = vettore.index(min(vettore))
+    valore_max = max(vettore)
+    valore_min = min(vettore)
+    return indice_massimo, valore_max, indice_minimo, valore_min
+
+vettore = [10, 5, 20, 8, 15]
+indice_massimo, valore_max, indice_minimo, valore_min = trovamassimoeminimo(vettore)
+
+print("valore del minimo [", valore_min, "] posizione [",indice_minimo,"]")
+
+
+print("valore del massimo [", valore_max, "] posizione [",indice_massimo,"]")
+------------------------------------------------------
+
